@@ -77,7 +77,7 @@ const pangram = (string) => {
     'u': false, 'v': false, 'w': false, 'x': false, 'y': false, 'z': false
 }
 
-for (let char of sentence) {
+for (let char of string) {
     if ('a' <= char && char <= 'z') {
         alphabet[char] = true
     }
@@ -91,3 +91,27 @@ for (let letter in alphabet) {
 
 return true
 }
+
+console.log(pangram("The quick brown fox jumps over the lazy dog!")) // true
+console.log(pangram("I like cats, but not mice")) // false
+
+// the time complexity of this function is O(n) becouse of the looping done with both the string conversion to lowercase and comparing it to the alphaabet object
+
+/*
+Write a function, find_longest_word, that takes a list of words and returns the length of the longest one.
+
+For example:
+
+findLongestWord(["hi", "hello"]);
+// -> 5 
+*/
+const findLongestWord = ["hi", "hello"]
+
+const longest = (arr) => {
+    const length = arr.map(str => str.length)
+    return Math.max(...length)
+}
+
+console.log(longest(findLongestWord))
+
+// this function has a time complexity of O(n)
